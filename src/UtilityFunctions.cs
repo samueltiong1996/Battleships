@@ -139,10 +139,7 @@ static class UtilityFunctions
 
 				draw = true;
 
-				switch (grid.Item(row, col)) {
-					case TileView.Ship:
-						draw = false;
-						break;
+				switch (grid[row, col]) {
 					//If small Then fillColor = _SMALL_SHIP Else fillColor = _LARGE_SHIP
 					case TileView.Miss:
 						if (small)
@@ -293,7 +290,7 @@ static class UtilityFunctions
 		List<Sprite> ended = new List<Sprite>();
 		foreach (Sprite s in _Animations) {
 			SwinGame.UpdateSprite(s);
-			if (s.animationHasEnded) {
+			if (s.AnimationHasEnded) {
 				ended.Add(s);
 			}
 		}
