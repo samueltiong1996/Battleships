@@ -288,6 +288,17 @@ public static class GameController
             }
         }
 
+	//Unmute background music
+	if (SwinGame.KeyTyped (KeyCode.vk_p)) {
+		if (SwinGame.MusicPlaying ()) {
+			SwinGame.StopMusic ();
+			_mute = false;
+		} else {
+			SwinGame.PlayMusic (GameResources.GameMusic ("Background"));
+			_mute = true;
+		}
+	}
+
         switch (CurrentState) {
 			case GameState.ViewingMainMenu:
 				MenuController.HandleMainMenuInput();
