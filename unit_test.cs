@@ -8,12 +8,17 @@ namespace BattleShips
 	public class unit_test
 	{
 		[Test]
-		public void Testing_Instruction()
+		public void testMuteWithM ()
 		{
-			Assert.AreEqual ("Current Page", MenuController.Get_Current_Page);
-
-			MenuController.PerformMainMenuAction (3);
-			Assert.AreEqual ("Help Page", MenuController.Get_Current_Page);
+			string s;
+			SwinGame.PlayMusic("Background");
+			SwinGame.KeyTyped (KeyCode.vk_m);
+			if (SwinGame.MusicPlaying ()) {
+				s = "playing";
+			} else {
+				s = "notplaying";
+			}
+			Assert.AreEqual (s, "notplaying");
 		}
 	}
 }
