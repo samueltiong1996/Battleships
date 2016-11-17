@@ -20,6 +20,16 @@ namespace BattleShips
 			}
 			Assert.AreEqual (s, "notplaying");
 		}
+		
+		[Test]
+		public void Test_Change_High_score_Page()
+		{
+			Assert.IsTrue (MenuController.Get_Current_Page == "Menu Page");
+		
+			MenuController.PerformMainMenuAction (2);
+
+			Assert.IsTrue (MenuController.Get_Current_Page == "High Score Page");
+		}
 	}
 }
 
